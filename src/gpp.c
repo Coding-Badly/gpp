@@ -267,6 +267,10 @@ char *my_strdup(const char *s) {
 #  define my_strdup strdup
 #endif
 #if ! HAVE_STRCASECMP
+#  if HAVE_STRICMP
+#    undef my_strcasecmp
+#    define my_strcasecmp _stricmp
+#  else
 int my_strcasecmp(const char *s, const char *s2) {
     do {
         char c1 = tolower(*s);
@@ -278,6 +282,7 @@ int my_strcasecmp(const char *s, const char *s2) {
     } while (*s++ && *s2++);
     return 0;
 }
+#  endif
 #else
 #  undef my_strcasecmp
 #  define my_strcasecmp strcasecmp
