@@ -24,6 +24,10 @@
 # include <config.h>
 #endif
 
+#ifndef PACKAGE_STRING
+#define PACKAGE_STRING ""
+#endif
+
 #ifdef WIN_NT              /* WIN NT settings */
 #define popen   _popen
 #define pclose  _pclose
