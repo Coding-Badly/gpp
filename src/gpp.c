@@ -248,8 +248,8 @@ static void DoInclude(char *file_name);
  ** versions in case the compiler does not support them
  */
 #if ! HAVE_STRDUP
-inline char *my_strdup(const char *s);
-inline char *my_strdup(const char *s) {
+char *my_strdup(const char *s);
+char *my_strdup(const char *s) {
     size_t len = strlen(s) + 1;
     char *newstr = malloc(len);
     return newstr ? (char *) memcpy(newstr, s, len) : NULL ;
