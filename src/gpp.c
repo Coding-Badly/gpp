@@ -21,7 +21,7 @@
 
 /* To compile under MS VC++, one must define WIN_NT */
 #if HAVE_CONFIG_H
-# include <config.h>
+# include "config.h"
 #endif
 
 #ifndef PACKAGE_STRING
