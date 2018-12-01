@@ -25,7 +25,15 @@
 #endif
 
 #ifndef PACKAGE_STRING
-#define PACKAGE_STRING ""
+# define PACKAGE_STRING ""
+#endif
+
+#ifdef _WIN32
+# define WIN_NT  1
+#endif
+
+#ifdef _WIN64
+# define WIN_NT  1
 #endif
 
 #ifdef WIN_NT              /* WIN NT settings */
